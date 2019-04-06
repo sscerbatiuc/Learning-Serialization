@@ -8,8 +8,8 @@ import java.util.Random;
  *
  * @author sscerbatiuc
  */
-public class Employee implements Serializable{
-    
+public class Employee implements Serializable {
+
     String name;
     String surname;
     LocalDate employeedOn;
@@ -21,8 +21,24 @@ public class Employee implements Serializable{
         this.employeedOn = employeedOn;
         this.age = age;
     }
-    
-    public static Employee getRandomEmployee(){
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public LocalDate getEmployeedOn() {
+        return employeedOn;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public static Employee getRandomEmployee() {
         Random rnd = new Random();
         int randValue = rnd.nextInt();
         return new Employee("name" + randValue, "surname" + randValue, LocalDate.now(), randValue);
@@ -32,5 +48,5 @@ public class Employee implements Serializable{
     public String toString() {
         return "<Employee><name>" + name + "</name><surname>" + surname + "</surname><date>" + employeedOn + "</date><age>" + age + "</age></Employee>";
     }
-    
+
 }
